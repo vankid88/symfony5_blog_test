@@ -1,0 +1,17 @@
+{% extends 'layout/default.html.twig' %}
+
+{% block pageTitle %}Create product {% endblock %}
+
+{% block title  %}Create{% endblock %}
+
+{% block breadcrumb %}Product{% endblock %}
+
+{% block content %}
+	<h1>Create product</h1>
+    <div class="col-6">
+        {{ include('product/_form.html.twig', {'button_label': 'Create'}) }}
+    </div>
+	
+
+    
+{% endblock %}

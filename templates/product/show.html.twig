@@ -1,0 +1,40 @@
+{% extends 'layout/default.html.twig' %}
+
+{% block pageTitle %}Show product {% endblock %}
+
+{% block title  %}Show{% endblock %}
+
+{% block breadcrumb %}Product{% endblock %}
+
+{% block content %}
+	<h1>Show product</h1>
+	<div class="col-6">
+		<table class="table table-bordered">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<td>{{ product.id }}</td>
+				</tr>
+				<tr>
+					<th>Name</th>
+					<td>{{ product.name }}</td>
+				</tr>
+				<tr>
+					<th>Price</th>
+					<td>{{ product.price }}</td>
+				</tr>
+				<tr>
+					<th>Description</th>
+					<td>{{ product.description }}</td>
+				</tr>
+				<tr>
+					<th>Category</th>
+					<td>{{ product.category.name }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<a class="btn btn-sm btn-default" href="{{ path('product_index') }}">Back to list</a>
+		<a class="btn btn-sm btn-primary" href="{{ path('product_edit', {'id': product.id}) }}">Edit</a>
+	</div>
+{% endblock %}
