@@ -1,0 +1,18 @@
+{% extends 'layout/default.html.twig' %}
+
+{% block title %}New Student{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">New Student</h3>
+                </div>
+                <div class="card-body">
+                    {{ include('student/_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

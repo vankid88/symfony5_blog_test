@@ -35,6 +35,12 @@
 					<p>Categories</p>
 				</a>
 			</li>
+			<li class="nav-item has-treeview">
+				<a href="{{ path('student_index') }}" class="nav-link {{ app.request.get('_route') == 'student_index' ? 'active' }}">
+					<i class="nav-icon fa fa-address-book-o"></i>
+					<p>Students</p>
+				</a>
+			</li>
 		</ul>
 	</nav>
 	<!-- /.sidebar-menu -->

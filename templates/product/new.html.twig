@@ -7,11 +7,16 @@
 {% block breadcrumb %}Product{% endblock %}
 
 {% block content %}
-	<h1>Create product</h1>
-    <div class="col-6">
-        {{ include('product/_form.html.twig', {'button_label': 'Create'}) }}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">New Product</h3>
+                </div>
+                <div class="card-body">
+                    {{ include('product/_form.html.twig', {'button_label': 'Create'}) }}
+                </div>
+            </div>
+        </div>
     </div>
-	
-
-    
 {% endblock %}

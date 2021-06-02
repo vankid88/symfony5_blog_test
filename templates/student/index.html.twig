@@ -1,0 +1,52 @@
+{% extends 'layout/default.html.twig' %}
+
+{% block pageTitle %}Students{% endblock %}
+
+{% block title  %}Students{% endblock %}
+
+{% block breadcrumb %}Students{% endblock %}
+
+{% block content %}
+    <h1>Students</h1>
+
+    <p> 
+		<a class="btn btn-sm btn-primary" href="{{ path('student_new') }}">Create new</a>
+	</p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Gender</th>
+                <th>Birthday</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for student in students %}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.phone }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.address }}</td>
+                <td>{{ student.gender }}</td>
+                <td>{{ student.birthday ? student.birthday|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('student_show', {'id': student.id}) }}">show</a>
+                    <a href="{{ path('student_edit', {'id': student.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
