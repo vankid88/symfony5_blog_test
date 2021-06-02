@@ -25,20 +25,17 @@
 	<!-- AdminLTE App -->
 	<script src="{{ asset('/dist/js/adminlte.min.js') }}"></script>
 </head>
-<body class="hold-transition login-page text-sm">
+<body class="hold-transition login-page">
 	<div class="login-box">
-		<div class="login-logo">
-			<a href="/">ADMIN</a>
-		</div>
-		<!-- /.login-logo -->
-		<div class="card">
-			<div class="card-body login-card-body">
+		<div class="card card-outline card-primary">
+			<div class="card-header text-center">
+				<a href="../../index2.html" class="h1"><b>Admin</b>EMS</a>
+			</div>
+			<div class="card-body">
 				<p class="login-box-msg">Sign in to start your session</p>
-
-				
 				{% block content %} {% endblock %}
 			</div>
-			<!-- /.login-card-body -->
+			<!-- /.card-body -->
 		</div>
 	</div>
 </body>
