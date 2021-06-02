@@ -23,6 +23,7 @@ class CourseRepository extends ServiceEntityRepository
     //  * @return Course[] Returns an array of Course objects
     //  */
    
+    /*
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('c')
@@ -33,7 +34,7 @@ class CourseRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult()
         ;
-    }
+    } */
 
     /*
     public function findOneBySomeField($value): ?Course
