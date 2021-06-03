@@ -1,46 +1,58 @@
 {% extends 'layout/default.html.twig' %}
 
-{% block title %}Student{% endblock %}
+{% block pageTitle %}Student detail{% endblock %}
 
-{% block body %}
-    <h1>Student</h1>
+{% block title  %}Student detail{% endblock %}
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ student.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ student.name }}</td>
-            </tr>
-            <tr>
-                <th>Phone</th>
-                <td>{{ student.phone }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ student.email }}</td>
-            </tr>
-            <tr>
-                <th>Address</th>
-                <td>{{ student.address }}</td>
-            </tr>
-            <tr>
-                <th>Gender</th>
-                <td>{{ student.gender }}</td>
-            </tr>
-            <tr>
-                <th>Birthday</th>
-                <td>{{ student.birthday ? student.birthday|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+{% block breadcrumb %}Student detail{% endblock %}
 
-    <a href="{{ path('student_index') }}">back to list</a>
+{% block content %}
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card card-primary">
+				<div class="card-header">
+					<h3 class="card-title">Student detail</h3>
+				</div>
+				<div class="card-body">
+					<table class="table table-bordered">
+						<tbody>
+							<tr>
+								<th width="30%">Id</th>
+								<td>{{ student.id }}</td>
+							</tr>
+							<tr>
+								<th>Name</th>
+								<td>{{ student.name }}</td>
+							</tr>
+							<tr>
+								<th>Phone</th>
+								<td>{{ student.phone }}</td>
+							</tr>
+							<tr>
+								<th>Email</th>
+								<td>{{ student.email }}</td>
+							</tr>
+							<tr>
+								<th>Address</th>
+								<td>{{ student.address }}</td>
+							</tr>
+							<tr>
+								<th>Gender</th>
+								<td>{{ student.gender }}</td>
+							</tr>
+							<tr>
+								<th>Birthday</th>
+								<td>{{ student.birthday ? student.birthday|date('Y-m-d H:i:s') : '' }}</td>
+							</tr>
+						</tbody>
+					</table>
+					<p></p>
+					<a class="btn btn-sm btn-default" href="{{ path('student_index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to list</a>
+					<a class="btn btn-sm btn-warning text-light" href="{{ path('student_edit', {'id': student.id}) }}"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit</a>
 
-    <a href="{{ path('student_edit', {'id': student.id}) }}">edit</a>
-
-    {{ include('student/_delete_form.html.twig') }}
+					{{ include('student/_delete_form.html.twig') }}
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}

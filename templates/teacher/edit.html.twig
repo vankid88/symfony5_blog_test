@@ -1,13 +1,23 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout/default.html.twig' %}
 
-{% block title %}Edit Teacher{% endblock %}
+{% block pageTitle %}Edit teacher{% endblock %}
 
-{% block body %}
-    <h1>Edit Teacher</h1>
+{% block title  %}Edit teacher{% endblock %}
 
-    {{ include('teacher/_form.html.twig', {'button_label': 'Update'}) }}
+{% block breadcrumb %}Edit teacher{% endblock %}
 
-    <a href="{{ path('teacher_index') }}">back to list</a>
-
-    {{ include('teacher/_delete_form.html.twig') }}
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">New Product</h3>
+                </div>
+                <div class="card-body">
+                    {{ include('teacher/_form.html.twig', {'button_label': 'Update'}) }}
+                    {{ include('teacher/_delete_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

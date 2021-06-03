@@ -7,10 +7,17 @@
 {% block breadcrumb %}Product{% endblock %}
 
 {% block content %}
-	<h1>Edit product</h1>
-
-	{{ include('product/_form.html.twig', {'button_label': 'Update'}) }}
-
-    {{ include('product/_delete_form.html.twig') }}
-	
+	<div class="row">
+        <div class="col-md-6">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Edit Product</h3>
+                </div>
+                <div class="card-body">
+                    {{ include('product/_form.html.twig', {'button_label': 'Update'}) }}
+    				{{ include('product/_delete_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

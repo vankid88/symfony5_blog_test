@@ -47,6 +47,24 @@
 					<p>Students</p>
 				</a>
 			</li>
+			<li class="nav-item has-treeview">
+				<a href="{{ path('teacher_index') }}" class="nav-link {{ app.request.get('_route') == 'teacher_index' ? 'active' }}">
+					<i class="nav-icon fa fa-street-view"></i>
+					<p>Teacher</p>
+				</a>
+			</li>
+			<li class="nav-item has-treeview">
+				<a href="{{ path('course_index') }}" class="nav-link {{ app.request.get('_route') == 'course_index' ? 'active' }}">
+					<i class="nav-icon fa fa-ticket"></i>
+					<p>Course</p>
+				</a>
+			</li>
+			<li class="nav-item has-treeview">
+				<a href="{{ path('user_index') }}" class="nav-link {{ app.request.get('_route') == 'user_index' ? 'active' }}">
+					<i class="nav-icon fa fa-user"></i>
+					<p>Users</p>
+				</a>
+			</li>
 		</ul>
 	</nav>
 	<!-- /.sidebar-menu -->

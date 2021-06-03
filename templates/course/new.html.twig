@@ -1,11 +1,22 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout/default.html.twig' %}
 
-{% block title %}New Course{% endblock %}
+{% block pageTitle %}New Course{% endblock %}
 
-{% block body %}
-    <h1>Create new Course</h1>
+{% block title  %}New Course{% endblock %}
 
-    {{ include('course/_form.html.twig') }}
+{% block breadcrumb %}Course{% endblock %}
 
-    <a href="{{ path('course_index') }}">back to list</a>
+{% block content %}
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card card-primary">
+				<div class="card-header">
+					<h3 class="card-title">New Course</h3>
+				</div>
+				<div class="card-body">
+					{{ include('course/_form.html.twig') }}
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}

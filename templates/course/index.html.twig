@@ -1,35 +1,39 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout/default.html.twig' %}
 
-{% block title %}Course index{% endblock %}
+{% block pageTitle %}Course{% endblock %}
 
-{% block body %}
-    <h1>Course index</h1>
+{% block title  %}Course{% endblock %}
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for course in courses %}
-            <tr>
-                <td>{{ course.id }}</td>
-                <td>{{ course.name }}</td>
-                <td>
-                    <a href="{{ path('course_show', {'id': course.id}) }}">show</a>
-                    <a href="{{ path('course_edit', {'id': course.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+{% block breadcrumb %}Course{% endblock %}
 
-    <a href="{{ path('course_new') }}">Create new</a>
+{% block content %}
+	<p> 
+		<a class="btn btn-sm btn-primary" href="{{ path('course_new') }}">Create new</a>
+	</p>
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for course in courses %}
+			<tr>
+				<td>{{ course.id }}</td>
+				<td>{{ course.name }}</td>
+				<td>
+					<a class="btn btn-sm btn-secondary" href="{{ path('course_show', {'id': course.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i> Show</a>
+					<a class="btn btn-sm btn-warning text-light" href="{{ path('course_edit', {'id': course.id}) }}"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit</a>
+				</td>
+			</tr>
+		{% else %}
+			<tr>
+				<td colspan="3">no records found</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
 {% endblock %}

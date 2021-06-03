@@ -1,11 +1,22 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout/default.html.twig' %}
 
-{% block title %}New User{% endblock %}
+{% block pageTitle %}New User{% endblock %}
 
-{% block body %}
-    <h1>Create new User</h1>
+{% block title  %}New User{% endblock %}
 
-    {{ include('user/_form.html.twig') }}
+{% block breadcrumb %}New User{% endblock %}
 
-    <a href="{{ path('user_index') }}">back to list</a>
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">New User</h3>
+                </div>
+                <div class="card-body">
+                    {{ include('user/_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

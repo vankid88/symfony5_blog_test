@@ -1,10 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout/default.html.twig' %}
 
-{% block title %}Course{% endblock %}
+{% block pageTitle %}Course detail {% endblock %}
 
-{% block body %}
-    <h1>Course</h1>
+{% block title  %}Course detail{% endblock %}
 
+{% block breadcrumb %}Course detail{% endblock %}
     <table class="table">
         <tbody>
             <tr>
@@ -18,9 +18,8 @@
         </tbody>
     </table>
 
-    <a href="{{ path('course_index') }}">back to list</a>
-
-    <a href="{{ path('course_edit', {'id': course.id}) }}">edit</a>
+    <a class="btn btn-sm btn-default" href="{{ path('course_index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to list</a>
+    <a class="btn btn-sm btn-warning text-light" href="{{ path('course_edit', {'id': course.id}) }}"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit</a>
 
     {{ include('course/_delete_form.html.twig') }}
 {% endblock %}

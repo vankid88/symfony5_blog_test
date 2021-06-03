@@ -1,11 +1,16 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout/default.html.twig' %}
 
-{% block title %}Teacher index{% endblock %}
+{% block pageTitle %}Teachers index{% endblock %}
 
-{% block body %}
-    <h1>Teacher index</h1>
+{% block title  %}Teachers{% endblock %}
 
-    <table class="table">
+{% block breadcrumb %}Teachers{% endblock %}
+
+{% block content %}
+    <p> 
+		<a class="btn btn-sm btn-primary" href="{{ path('teacher_new') }}">Create new</a>
+	</p>
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Id</th>
@@ -38,6 +43,4 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('teacher_new') }}">Create new</a>
 {% endblock %}

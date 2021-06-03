@@ -33,8 +33,7 @@
 				</tr>
 			</tbody>
 		</table>
-
-		<a class="btn btn-sm btn-default" href="{{ path('product_index') }}">Back to list</a>
-		<a class="btn btn-sm btn-primary" href="{{ path('product_edit', {'id': product.id}) }}">Edit</a>
+		<a class="btn btn-sm btn-default" href="{{ path('product_index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to list</a>
+    	<a class="btn btn-sm btn-warning text-light" href="{{ path('product_edit', {'id': product.id}) }}"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit</a>
 	</div>
 {% endblock %}
