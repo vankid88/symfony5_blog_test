@@ -17,6 +17,9 @@
         </div>
 
         <div class="form-group">
+            {% if product.photo is not null %}
+                <img src="/uploads/photos/{{product.photo}}" width="100px"/>
+            {% endif %}
             {{ form_row(form.photo, {'attr': {'class': 'form-control'}}) }}
         </div>
         <a class="btn btn-sm btn-default" href="{{ path('product_index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to list</a>
